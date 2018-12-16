@@ -7,6 +7,6 @@ export class PhotoService {
     constructor(private http: HttpClient) { }
 
     listFormUser(userName: string) {
-        return this.http.get<Photo[]>('http://localhost:3000/flavio/photos')
+        return this.http.get<Photo[]>('http://localhost:3000/' + userName + '/photos')
     }
 }
