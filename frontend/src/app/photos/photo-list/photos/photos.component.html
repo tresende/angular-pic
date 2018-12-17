@@ -3,8 +3,8 @@
 </p>
 <ol class="list-unstyled row">
 	<li *ngFor="let cols of rows" class="row no-gutters">
-		<div *ngFor="let photo of cols" class="col-4">
-			<ap-card [title]="photo.description">
+		<div *ngFor="let photo of cols" class="col-4" apDarkenOnHover>
+			<ap-card [title]="photo.description" >
 				<ap-photo [url]="photo.url" [description]="photo.description">
 				</ap-photo>
 				<div class="text-center p-1">
