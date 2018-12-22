@@ -1,10 +1,15 @@
 <header class="sticky-top">
-	<nav class="navbar navbar-light bg-white">
-		<a class="navbar-brand">ALURAPIC</a>
-	  	<div>
-			<i class="fa fa-user-circle"></i>
-			<a class="ml-2">{{ user?.name}}</a>
-	  	</div>
-	</nav>
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand">ALURAPIC</a>
+    <div *ngIf="(user$ | async ) as user; else login">
+      <i class="fa fa-user-circle"></i>
+      <a class="mr-1">{{ user.name}}</a>
+      <a (click)="logout()" class="mr-1">(Logout)</a>
+    </div>
+    <ng-template #login>
+      <span>
+        Please, Login
+      </span>
+    </ng-template>
+  </nav>
 </header>
-  
