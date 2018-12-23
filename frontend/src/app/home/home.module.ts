@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
     imports: [
@@ -12,9 +13,11 @@ import { RouterModule } from '@angular/router';
         BrowserModule,
         ReactiveFormsModule,
         VMessageModule,
-        RouterModule
+        RouterModule,
+        FormsModule
     ],
-    declarations: [SigninComponent],
+    declarations: [SigninComponent, SignupComponent],
+    exports: [SignupComponent]
 })
 export class HomeModule {
 
