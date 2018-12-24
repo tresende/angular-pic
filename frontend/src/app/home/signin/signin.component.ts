@@ -3,9 +3,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from './../../core/platform-detector/platform-detector.service';
+import { UserNotTakenValidatorService } from '../signup/user-not-take.validator.service';
 
 @Component({
     templateUrl: './signin.component.html',
+    providers: [UserNotTakenValidatorService]
 })
 export class SigninComponent implements OnInit {
     loginForm: FormGroup;
