@@ -1,7 +1,8 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Photo } from './photo';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { Photo } from './photo';
 import { PhotoComment } from './photo-comment';
 
 const API = 'http://localhost:3000';
@@ -38,7 +39,7 @@ export class PhotoService {
         return this.http.get<PhotoComment[]>(API + '/photos/' + photoId + '/comments');
     }
 
-    addComment(photoId: number, commentText: string){
+    addComment(photoId: number, commentText: string) {
         return this.http.post(API + '/photos/' + photoId + '/comments', {
             commentText
         });
