@@ -5,8 +5,7 @@ import { PhotoService } from '../photo/photo.service';
 import { Observable } from 'rxjs';
 
 @Component({
-    templateUrl: './photo-details.component.html',
-    styleUrls: ['./photo-details.css']
+    templateUrl: './photo-details.component.html'
 })
 export class PhotoDetailsComponent implements OnInit {
 
