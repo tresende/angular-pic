@@ -8,8 +8,14 @@
         <p class="text-left break-word">{{ photo.description }}</p>
         <hr>
       </small>
+      <div class="text-left mb-4">
+        <i class="fa fa-comment-o fa-2x mr-2 ml-2"></i>{{ photo.comments }}
+        <i (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></i>
+      </div>
       <ap-photo-comments *ngIf="photo.allowComments; else warning" [photoId]="photoId"></ap-photo-comments>
-      <ng-template #warning><p>No comments allowed!</p></ng-template>
+      <ng-template #warning>
+        <p>No comments allowed!</p>
+      </ng-template>
     </div>
   </div>
 </div>
