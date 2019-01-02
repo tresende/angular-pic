@@ -3,13 +3,13 @@
     <div class="col-lg-8">
       <ap-photo [url]="photo.url" [description]="photo.description"></ap-photo>
     </div>
-
     <div class="col-lg-4 p-4">
       <small>
         <p class="text-left break-word">{{ photo.description }}</p>
         <hr>
       </small>
-      <ap-photo-comments [photoId]="photoId"></ap-photo-comments>
+      <ap-photo-comments *ngIf="photo.allowComments; else warning" [photoId]="photoId"></ap-photo-comments>
+      <ng-template #warning><p>No comments allowed!</p></ng-template>
     </div>
   </div>
 </div>
