@@ -7,6 +7,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RequestInterceptor } from './auth/request.interceptor';
 import { AlertModule } from '../shared/components/alert/alert.module';
+import { LoadingModule } from '../shared/components/loading/loading.module';
+import { MenuModule } from '../shared/components/menu/menu.module';
+import { ShowIfLoggedModule } from '../shared/components/show-if-logged/show-if-logged.module';
 
 @NgModule({
     declarations: [HeaderComponent, FooterComponent],
@@ -14,7 +17,10 @@ import { AlertModule } from '../shared/components/alert/alert.module';
     imports: [
         CommonModule,
         RouterModule,
-        AlertModule
+        AlertModule,
+        LoadingModule,
+        MenuModule,
+        ShowIfLoggedModule
     ],
     providers: [
         {
